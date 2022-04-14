@@ -1,10 +1,18 @@
-const numero1 = parseInt(prompt('inserisci un numero'));
-const numero2 = parseInt(prompt('inserisci un numero'));
+const array = [];
+let sum = 0
+for(i = 0; i < 5; i++) {
+  array.push(prompt('inserisci un numero'))
+  
+  if(array[i].includes(',')){
+    alert('use \'.\' instead of \',\'')
+    array.pop()
+    array.push(prompt('inserisci un numero'))
+  }
+};
 
-if(numero1 > numero2) {
-  document.getElementById('_maggiore').innerHTML = numero1
-} else if(numero2 > numero1){
-  document.getElementById('_maggiore').innerHTML = numero2
-} else{
-  document.getElementById('_maggiore').innerHTML = 'WOW!!! It seem\'s they are equal'
+for(i = 0; i < array.length; i++) {
+  sum += parseFloat(array[i])
 }
+
+document.querySelector('div').innerHTML = sum;
+console.log();
