@@ -1,10 +1,16 @@
-const numero1 = parseInt(prompt('inserisci un numero'));
-const numero2 = parseInt(prompt('inserisci un numero'));
+const array = ['giacomino','ugo','lello'];
+const nome = prompt('nome');
+const nomeCorretto = nome.toLowerCase();
 
-if(numero1 > numero2) {
-  document.getElementById('_maggiore').innerHTML = numero1
-} else if(numero2 > numero1){
-  document.getElementById('_maggiore').innerHTML = numero2
-} else{
-  document.getElementById('_maggiore').innerHTML = 'WOW!!! It seem\'s they are equal'
-}
+let i = 0;
+do {
+   if(nomeCorretto === array[i]){
+   alert(`Mr ${nome}, you are welcome.`);
+ } else if(i === array.length - 1 && nomeCorretto !== array[i]){
+   alert(`Mr ${nome}, you are not invited.`)
+ } else {
+   i++
+  }
+ 
+} while(i < array.length - 1 || nomeCorretto !== array[i])
+
